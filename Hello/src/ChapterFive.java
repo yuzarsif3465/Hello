@@ -157,14 +157,14 @@ public class ChapterFive {
                 number/=i;
             }
         }
-*/
+
         //5.17
         System.out.println("enter a number for pyramid: ");
         int pyramid = sc.nextInt();
 
         for(int i=1;i<=pyramid;i++) {
             for (int j=0;j<=pyramid-i;j++) {
-                System.out.printf("* ");
+                System.out.printf("  ");
             }
             for (int j=i;j>=1;j--) {
                 if(j!=1){
@@ -176,6 +176,74 @@ public class ChapterFive {
             System.out.println();
 
         }
+
+        //5.18
+        System.out.println("enter the loop number:");
+        int loop = sc.nextInt();
+        //A example
+        for (int i = 1; i <= loop; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.printf("%d ", j);
+            }
+            System.out.println();
+        }
+        System.out.println();
+        //B example
+        for (int i = 1; i <= loop; i++) {
+            for (int j = 1; j <= loop-i+1; j++) {
+                System.out.printf("%d ", j);
+            }
+            System.out.println();
+        }
+        System.out.println();
+        //C example
+        for (int i = 1; i <= loop; i++) {
+            for (int j = 0; j <loop-i; j++) {
+                System.out.printf("  ");
+            }
+            for (int j = i; j>0; j--) {
+                System.out.printf("%d ", j);
+            }
+            System.out.println();
+        }
+        System.out.println();
+        //D example
+        for (int i = 1; i <= loop; i++) {
+            for (int j = 1; j < i; j++) {
+                System.out.printf("  ");
+            }
+            for (int j = 1; j <= loop-i+1; j++) {
+                System.out.printf("%d ", j);
+            }
+            System.out.println();
+        }
+
+        //5.19
+        System.out.println("enter the hight of the pyramid: ");
+        int hight = sc.nextInt();
+
+        for (int i = 1; i <= hight; i++) {
+            for (int j = 0; j <= hight-i-1; j++) {
+                System.out.printf("   ");
+            }
+            for (int k = 0; k < i-1; k++) {
+                double n=Math.pow(2,k);
+                System.out.printf("%.0f  ",n);
+            }
+            for (int l = 0; l < i; l++) {
+                double n=Math.pow(2,l);
+                System.out.printf("%.0f  ",n);
+            }
+            System.out.println();
+        }
+*/
+        //5.20
+
+        final int number_Per_Line=8;
+        int number=2;
+        
+        boolean isPrime = true;
+
 
 
     }
