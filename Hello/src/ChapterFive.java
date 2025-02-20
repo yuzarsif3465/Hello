@@ -236,15 +236,45 @@ public class ChapterFive {
             }
             System.out.println();
         }
-*/
-        //5.20
 
+        //5.20
+        int prime=0;
         final int number_Per_Line=8;
         int number=2;
+
+        while(number<=1000) {
+            boolean isPrime = true;
+            for(int i=2;i<=number/2;i++) {
+                if(number%i==0) {
+                    isPrime = false;
+                }
+            }
+            if(isPrime) {
+                prime++;
+                if(prime % number_Per_Line==0) {
+                    System.out.println(number);
+                }
+                else {
+                    System.out.print(number+"   ");
+                }
+            }
+            number++;
+        }
+
+        //5.21
+        System.out.print("Please enter amount of loan: ");
+        double loanAmount = sc.nextDouble();
+        System.out.print("Please enter number of year that you will keep: ");
+        int year = sc.nextInt();
+        System.out.println("Interest Rate    Monthly Payment  Total Payment");
+        for (double rate=0.05000; rate<=0.08000; rate+=0.00125){
+            int month=year*12;
+            double payment = loanAmount * rate;
+            double totalPayment=payment*month;
+            System.out.printf("%-17.5f%-17.2f%-17.2f%n",rate,payment,totalPayment);
+        }
+*/      //5.22
         
-        boolean isPrime = true;
-
-
 
     }
 }
