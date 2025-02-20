@@ -273,8 +273,371 @@ public class ChapterFive {
             double totalPayment=payment*month;
             System.out.printf("%-17.5f%-17.2f%-17.2f%n",rate,payment,totalPayment);
         }
-*/      //5.22
-        
+      //5.22
+        //principle is the loan-balance
+        // interest is monthly interest*balance
+        System.out.print("enter loan amount: ");
+        double loanAmount = sc.nextDouble();
+        System.out.print("enter year: ");
+        int year = sc.nextInt();
+        System.out.print("what is the annual interest rate: ");
+        double rate = sc.nextDouble();
+        double monthlyInterestRate = rate / (12*100);
+        double monthlyPayment = loanAmount * monthlyInterestRate*(Math.pow(monthlyInterestRate+1,12*year))/(Math.pow(monthlyInterestRate+1,12*year)-1);
 
+        System.out.printf("monthly payment: %.2f%n",monthlyPayment);
+        System.out.printf("total payment: %.2f%n",monthlyPayment*12);
+
+        System.out.println("Payment      Interest     Principle      Balance");
+        double balance = loanAmount;
+        for (int i = 1; 1<balance; i++) {
+
+            double interest = balance * monthlyInterestRate;
+            double principal = monthlyPayment - interest;
+            balance = balance - principal;
+
+            System.out.printf("%-13d%-13.2f%-15.2f%-13.2f",i,interest,principal,balance);
+            System.out.println();
+        }
+
+        //5.23
+        int number = 5000;
+        double a=0;
+        for (int i = 1; i <= number; i++) {
+            a=a+(1/i);
+        }
+        System.out.println(a);
+
+        for (int i = number; i >0 ; i--) {
+            a=a+(1/i);
+        }
+        System.out.println(a);
+
+        //5.24
+        int a=0;
+        for (int i=1;i<98;i++) {
+            a=a+(i/(i+2));
+        }
+        System.out.println(a);
+        for (int i=99;i>2;i--) {
+            a=a+((i-2)/(i));
+        }
+        System.out.println(a );
+
+        //5.25
+        double PI = 0;
+        for (int k=1; k<=10; k++) {
+            for (int i = 1; i <= 10000*k; i++) {
+                PI = PI + (Math.pow(-1, i + 1) / (2 * i - 1));
+            }
+            System.out.print("i= "+10000*k+" degeri icin PI=");
+            System.out.println(4 * PI);
+        }
+      //5.26
+        double e=1;
+        for (int k = 1; k <= 10; k++) {
+            for (int i = 10000*k; i >0; i--) {
+
+                for (double j = i; j>=1; j--) {
+                    e*=(1/j);
+                }
+                e+=e;
+
+            }
+            System.out.println("from 0 to "+10000*k+": "+e);
+        }
+      //5.27
+        System.out.println("we will find the leap year");
+        int count=0;
+        for (int i=101; i<=2100; i++) {
+            if (i%4==0) {
+                count++;
+                if (count%10==0) {
+                    System.out.println(i);
+                }
+                else{
+                    System.out.print(i+" ");
+                }
+            }
+            else {
+                continue;
+            }
+        }
+      //5.28
+        System.out.print("enter the  year: ");
+        int year = sc.nextInt();
+        System.out.print("enter first day of the year 0-7:");
+        int firstDay = sc.nextInt();
+        String day = "";
+        if(year%4==0){//fabruary would be 29 days
+            switch (firstDay%7) {
+                case 0:day="sunday";break;
+                case 1:day="monday";break;
+                case 2:day="tuesday";break;
+                case 3:day="wednesday";break;
+                case 4:day="thursday";break;
+                case 5:day="friday";break;
+                case 6:day="saturday";break;
+            }
+            System.out.println("january 1,"+year+" is "+day);
+            firstDay=firstDay+31;
+            switch (firstDay%7) {
+                case 0:day="sunday";break;
+                case 1:day="monday";break;
+                case 2:day="tuesday";break;
+                case 3:day="wednesday";break;
+                case 4:day="thursday";break;
+                case 5:day="friday";break;
+                case 6:day="saturday";break;
+            }
+            System.out.println("february 1,"+year+" is "+day);
+            firstDay=firstDay+29;
+            switch (firstDay%7) {
+                case 0:day="sunday";break;
+                case 1:day="monday";break;
+                case 2:day="tuesday";break;
+                case 3:day="wednesday";break;
+                case 4:day="thursday";break;
+                case 5:day="friday";break;
+                case 6:day="saturday";break;
+            }
+            System.out.println("march 1,"+year+" is "+day);
+            firstDay=firstDay+31;
+            switch (firstDay%7) {
+                case 0:day="sunday";break;
+                case 1:day="monday";break;
+                case 2:day="tuesday";break;
+                case 3:day="wednesday";break;
+                case 4:day="thursday";break;
+                case 5:day="friday";break;
+                case 6:day="saturday";break;
+            }
+            System.out.println("april 1,"+year+" is "+day);
+            firstDay=firstDay+30;
+            switch (firstDay%7) {
+                case 0:day="sunday";break;
+                case 1:day="monday";break;
+                case 2:day="tuesday";break;
+                case 3:day="wednesday";break;
+                case 4:day="thursday";break;
+                case 5:day="friday";break;
+                case 6:day="saturday";break;
+            }
+            System.out.println("may 1,"+year+" is "+day);
+            firstDay=firstDay+31;
+            switch (firstDay%7) {
+                case 0:day="sunday";break;
+                case 1:day="monday";break;
+                case 2:day="tuesday";break;
+                case 3:day="wednesday";break;
+                case 4:day="thursday";break;
+                case 5:day="friday";break;
+                case 6:day="saturday";break;
+            }
+            System.out.println("june 1,"+year+" is "+day);
+            firstDay=firstDay+30;
+            switch (firstDay%7) {
+                case 0:day="sunday";break;
+                case 1:day="monday";break;
+                case 2:day="tuesday";break;
+                case 3:day="wednesday";break;
+                case 4:day="thursday";break;
+                case 5:day="friday";break;
+                case 6:day="saturday";break;
+            }
+            System.out.println("july 1,"+year+" is "+day);
+            firstDay=firstDay+31;
+            switch (firstDay%7) {
+                case 0:day="sunday";break;
+                case 1:day="monday";break;
+                case 2:day="tuesday";break;
+                case 3:day="wednesday";break;
+                case 4:day="thursday";break;
+                case 5:day="friday";break;
+                case 6:day="saturday";break;
+            }
+            System.out.println("august 1,"+year+" is "+day);
+            firstDay=firstDay+31;
+            switch (firstDay%7) {
+                case 0:day="sunday";break;
+                case 1:day="monday";break;
+                case 2:day="tuesday";break;
+                case 3:day="wednesday";break;
+                case 4:day="thursday";break;
+                case 5:day="friday";break;
+                case 6:day="saturday";break;
+            }
+            System.out.println("september 1,"+year+" is "+day);
+            firstDay=firstDay+30;
+            switch (firstDay%7) {
+                case 0:day="sunday";break;
+                case 1:day="monday";break;
+                case 2:day="tuesday";break;
+                case 3:day="wednesday";break;
+                case 4:day="thursday";break;
+                case 5:day="friday";break;
+                case 6:day="saturday";break;
+            }
+            System.out.println("october 1,"+year+" is "+day);
+            firstDay=firstDay+31;
+            switch (firstDay%7) {
+                case 0:day="sunday";break;
+                case 1:day="monday";break;
+                case 2:day="tuesday";break;
+                case 3:day="wednesday";break;
+                case 4:day="thursday";break;
+                case 5:day="friday";break;
+                case 6:day="saturday";break;
+            }
+            System.out.println("november,"+year+" is "+day);
+            firstDay=firstDay+30;
+            switch (firstDay%7) {
+                case 0:day="sunday";break;
+                case 1:day="monday";break;
+                case 2:day="tuesday";break;
+                case 3:day="wednesday";break;
+                case 4:day="thursday";break;
+                case 5:day="friday";break;
+                case 6:day="saturday";break;
+            }
+            System.out.println("december,"+year+" is "+day);
+        }
+        else{
+            switch (firstDay%7) {
+                case 0:day="sunday";break;
+                case 1:day="monday";break;
+                case 2:day="tuesday";break;
+                case 3:day="wednesday";break;
+                case 4:day="thursday";break;
+                case 5:day="friday";break;
+                case 6:day="saturday";break;
+            }
+            System.out.println("january 1,"+year+" is "+day);
+            firstDay=firstDay+31;
+            switch (firstDay%7) {
+                case 0:day="sunday";break;
+                case 1:day="monday";break;
+                case 2:day="tuesday";break;
+                case 3:day="wednesday";break;
+                case 4:day="thursday";break;
+                case 5:day="friday";break;
+                case 6:day="saturday";break;
+            }
+            System.out.println("february 1,"+year+" is "+day);
+            firstDay=firstDay+28;
+            switch (firstDay%7) {
+                case 0:day="sunday";break;
+                case 1:day="monday";break;
+                case 2:day="tuesday";break;
+                case 3:day="wednesday";break;
+                case 4:day="thursday";break;
+                case 5:day="friday";break;
+                case 6:day="saturday";break;
+            }
+            System.out.println("march 1,"+year+" is "+day);
+            firstDay=firstDay+31;
+            switch (firstDay%7) {
+                case 0:day="sunday";break;
+                case 1:day="monday";break;
+                case 2:day="tuesday";break;
+                case 3:day="wednesday";break;
+                case 4:day="thursday";break;
+                case 5:day="friday";break;
+                case 6:day="saturday";break;
+            }
+            System.out.println("april 1,"+year+" is "+day);
+            firstDay=firstDay+30;
+            switch (firstDay%7) {
+                case 0:day="sunday";break;
+                case 1:day="monday";break;
+                case 2:day="tuesday";break;
+                case 3:day="wednesday";break;
+                case 4:day="thursday";break;
+                case 5:day="friday";break;
+                case 6:day="saturday";break;
+            }
+            System.out.println("may 1,"+year+" is "+day);
+            firstDay=firstDay+31;
+            switch (firstDay%7) {
+                case 0:day="sunday";break;
+                case 1:day="monday";break;
+                case 2:day="tuesday";break;
+                case 3:day="wednesday";break;
+                case 4:day="thursday";break;
+                case 5:day="friday";break;
+                case 6:day="saturday";break;
+            }
+            System.out.println("june 1,"+year+" is "+day);
+            firstDay=firstDay+30;
+            switch (firstDay%7) {
+                case 0:day="sunday";break;
+                case 1:day="monday";break;
+                case 2:day="tuesday";break;
+                case 3:day="wednesday";break;
+                case 4:day="thursday";break;
+                case 5:day="friday";break;
+                case 6:day="saturday";break;
+            }
+            System.out.println("july 1,"+year+" is "+day);
+            firstDay=firstDay+31;
+            switch (firstDay%7) {
+                case 0:day="sunday";break;
+                case 1:day="monday";break;
+                case 2:day="tuesday";break;
+                case 3:day="wednesday";break;
+                case 4:day="thursday";break;
+                case 5:day="friday";break;
+                case 6:day="saturday";break;
+            }
+            System.out.println("august 1,"+year+" is "+day);
+            firstDay=firstDay+31;
+            switch (firstDay%7) {
+                case 0:day="sunday";break;
+                case 1:day="monday";break;
+                case 2:day="tuesday";break;
+                case 3:day="wednesday";break;
+                case 4:day="thursday";break;
+                case 5:day="friday";break;
+                case 6:day="saturday";break;
+            }
+            System.out.println("september 1,"+year+" is "+day);
+            firstDay=firstDay+30;
+            switch (firstDay%7) {
+                case 0:day="sunday";break;
+                case 1:day="monday";break;
+                case 2:day="tuesday";break;
+                case 3:day="wednesday";break;
+                case 4:day="thursday";break;
+                case 5:day="friday";break;
+                case 6:day="saturday";break;
+            }
+            System.out.println("october 1,"+year+" is "+day);
+            firstDay=firstDay+31;
+            switch (firstDay%7) {
+                case 0:day="sunday";break;
+                case 1:day="monday";break;
+                case 2:day="tuesday";break;
+                case 3:day="wednesday";break;
+                case 4:day="thursday";break;
+                case 5:day="friday";break;
+                case 6:day="saturday";break;
+            }
+            System.out.println("november,"+year+" is "+day);
+            firstDay=firstDay+30;
+            switch (firstDay%7) {
+                case 0:day="sunday";break;
+                case 1:day="monday";break;
+                case 2:day="tuesday";break;
+                case 3:day="wednesday";break;
+                case 4:day="thursday";break;
+                case 5:day="friday";break;
+                case 6:day="saturday";break;
+            }
+            System.out.println("december,"+year+" is "+day);
+        }
+
+    */
+        //5.29
     }
+
 }
