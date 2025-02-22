@@ -935,7 +935,7 @@ public class ChapterFive {
 
         }
         System.out.println(" the number of uppercase letter is  " +up);
-        */
+
         //5.51
 
         System.out.print("enter the first string: ");
@@ -952,6 +952,696 @@ public class ChapterFive {
             }
         }
         System.out.println(common);
+*/      //5.29
+
+        System.out.println("Enter the year ");
+        int year=sc.nextInt();
+        System.out.println("enter the day as number 0-6:");
+        int firstDay=sc.nextInt();
+        String day = "";
+        String month="";
+
+        if(year%4==0){
+            for (int a=0;a<12;a++){
+                switch(a){
+                    case 0:month="January";break;
+                    case 1:month="February";break;
+                    case 2:month="March";break;
+                    case 3:month="April";break;
+                    case 4:month="May";break;
+                    case 5:month="June";break;
+                    case 6:month="July";break;
+                    case 7:month="August";break;
+                    case 8:month="September";break;
+                    case 9:month="October";break;
+                    case 10:month="November";break;
+                    case 11:month="December";break;
+                }
+                switch (month){
+                    case "January":break;
+                    case "February":firstDay+=31;break;
+                    case "March":firstDay+=29;break;
+                    case "April":firstDay+=31;break;
+                    case "May":firstDay+=31;break;
+                    case "June":firstDay+=31;break;
+                    case "July":firstDay+=30;break;
+                    case "August":firstDay+=31;break;
+                    case "September":firstDay+=31;break;
+                    case "October":firstDay+=30;break;
+                    case "November":firstDay+=31;break;
+                    case "December":firstDay+=30;break;
+                }
+                switch (firstDay%7) {
+                    case 0:day="sunday";break;
+                    case 1:day="monday";break;
+                    case 2:day="tuesday";break;
+                    case 3:day="wednesday";break;
+                    case 4:day="thursday";break;
+                    case 5:day="friday";break;
+                    case 6:day="saturday";break;
+                }
+                System.out.println();
+                System.out.printf("               %s %d %n",month,year);
+                System.out.println("_____________________________________________");
+                System.out.println("Sun    Mon    Tue    Wed    Thu    Fri    Sat");
+                if(day.equals("sunday")){
+                    int count=1;
+                    for(int i=1;i<=6;i++){
+                        for(int j=1;j<=7;j++){
+                            System.out.printf("%-7d",count);
+                            count++;
+                            if (count==32 && month.equals("January")){break;}
+                            else if(count==30 && month.equals("February")){break;}
+                            else if(count==32 && month.equals("March")){break;}
+                            else if(count==32 && month.equals("April")){break;}
+                            else if(count==32 && month.equals("May")){break;}
+                            else if(count==31 && month.equals("June")){break;}
+                            else if(count==32 && month.equals("July")){break;}
+                            else if(count==32 && month.equals("August")){break;}
+                            else if(count==31 && month.equals("September")){break;}
+                            else if(count==32 && month.equals("October")){break;}
+                            else if(count==31 && month.equals("November")){break;}
+                            else if(count==32 && month.equals("December")){break;}
+                        }if (count==32 && month.equals("January")){break;}
+                        else if(count==30 && month.equals("February")){break;}
+                        else if(count==32 && month.equals("March")){break;}
+                        else if(count==32 && month.equals("April")){break;}
+                        else if(count==32 && month.equals("May")){break;}
+                        else if(count==31 && month.equals("June")){break;}
+                        else if(count==32 && month.equals("July")){break;}
+                        else if(count==32 && month.equals("August")){break;}
+                        else if(count==31 && month.equals("September")){break;}
+                        else if(count==32 && month.equals("October")){break;}
+                        else if(count==31 && month.equals("November")){break;}
+                        else if(count==32 && month.equals("December")){break;}
+                        System.out.println();
+                    }
+                }
+                else if(day.equals("monday")){
+                    int count=1;
+                    System.out.printf("       ");
+                    for(int i=1;i<=6;i++){
+                        if(i==1){
+                            for(int k=1;k<=6;k++){
+                                System.out.printf("%-7d",count);
+                                count++;
+
+                            }
+                        }
+                        else{
+                            for(int j=1;j<=7;j++){
+                                System.out.printf("%-7d",count);
+                                count++;
+                                if (count==32 && month.equals("January")){break;}
+                                else if(count==30 && month.equals("February")){break;}
+                                else if(count==32 && month.equals("March")){break;}
+                                else if(count==32 && month.equals("April")){break;}
+                                else if(count==32 && month.equals("May")){break;}
+                                else if(count==31 && month.equals("June")){break;}
+                                else if(count==32 && month.equals("July")){break;}
+                                else if(count==32 && month.equals("August")){break;}
+                                else if(count==31 && month.equals("September")){break;}
+                                else if(count==32 && month.equals("October")){break;}
+                                else if(count==31 && month.equals("November")){break;}
+                                else if(count==32 && month.equals("December")){break;}
+                            }
+                        }if (count==32 && month.equals("January")){break;}
+                        else if(count==30 && month.equals("February")){break;}
+                        else if(count==32 && month.equals("March")){break;}
+                        else if(count==32 && month.equals("April")){break;}
+                        else if(count==32 && month.equals("May")){break;}
+                        else if(count==31 && month.equals("June")){break;}
+                        else if(count==32 && month.equals("July")){break;}
+                        else if(count==32 && month.equals("August")){break;}
+                        else if(count==31 && month.equals("September")){break;}
+                        else if(count==32 && month.equals("October")){break;}
+                        else if(count==31 && month.equals("November")){break;}
+                        else if(count==32 && month.equals("December")){break;}
+                        System.out.println();
+                    }
+                }
+                else if(day.equals("tuesday")){
+                    int count=1;
+                    System.out.printf("              ");
+                    for(int i=1;i<=6;i++){
+                        if(i==1){
+                            for(int k=1;k<=5;k++){
+                                System.out.printf("%-7d",count);
+                                count++;
+
+                            }
+                        }
+                        else{
+                            for(int j=1;j<=7;j++){
+                                System.out.printf("%-7d",count);
+                                count++;
+                                if (count==32 && month.equals("January")){break;}
+                                else if(count==30 && month.equals("February")){break;}
+                                else if(count==32 && month.equals("March")){break;}
+                                else if(count==32 && month.equals("April")){break;}
+                                else if(count==32 && month.equals("May")){break;}
+                                else if(count==31 && month.equals("June")){break;}
+                                else if(count==32 && month.equals("July")){break;}
+                                else if(count==32 && month.equals("August")){break;}
+                                else if(count==31 && month.equals("September")){break;}
+                                else if(count==32 && month.equals("October")){break;}
+                                else if(count==31 && month.equals("November")){break;}
+                                else if(count==32 && month.equals("December")){break;}
+                            }
+                        }if (count==32 && month.equals("January")){break;}
+                        else if(count==30 && month.equals("February")){break;}
+                        else if(count==32 && month.equals("March")){break;}
+                        else if(count==32 && month.equals("April")){break;}
+                        else if(count==32 && month.equals("May")){break;}
+                        else if(count==31 && month.equals("June")){break;}
+                        else if(count==32 && month.equals("July")){break;}
+                        else if(count==32 && month.equals("August")){break;}
+                        else if(count==31 && month.equals("September")){break;}
+                        else if(count==32 && month.equals("October")){break;}
+                        else if(count==31 && month.equals("November")){break;}
+                        else if(count==32 && month.equals("December")){break;}
+                        System.out.println();
+                    }
+                }
+                else if(day.equals("wednesday")){
+                    int count=1;
+                    System.out.printf("                     ");
+                    for(int i=1;i<=6;i++){
+                        if(i==1){
+                            for(int k=1;k<=4;k++){
+                                System.out.printf("%-7d",count);
+                                count++;
+
+                            }
+                        }
+                        else{
+                            for(int j=1;j<=7;j++){
+                                System.out.printf("%-7d",count);
+                                count++;
+                                if (count==32 && month.equals("January")){break;}
+                                else if(count==30 && month.equals("February")){break;}
+                                else if(count==32 && month.equals("March")){break;}
+                                else if(count==32 && month.equals("April")){break;}
+                                else if(count==32 && month.equals("May")){break;}
+                                else if(count==31 && month.equals("June")){break;}
+                                else if(count==32 && month.equals("July")){break;}
+                                else if(count==32 && month.equals("August")){break;}
+                                else if(count==31 && month.equals("September")){break;}
+                                else if(count==32 && month.equals("October")){break;}
+                                else if(count==31 && month.equals("November")){break;}
+                                else if(count==32 && month.equals("December")){break;}
+                            }
+                            if (count==32 && month.equals("January")){break;}
+                            else if(count==30 && month.equals("February")){break;}
+                            else if(count==32 && month.equals("March")){break;}
+                            else if(count==32 && month.equals("April")){break;}
+                            else if(count==32 && month.equals("May")){break;}
+                            else if(count==31 && month.equals("June")){break;}
+                            else if(count==32 && month.equals("July")){break;}
+                            else if(count==32 && month.equals("August")){break;}
+                            else if(count==31 && month.equals("September")){break;}
+                            else if(count==32 && month.equals("October")){break;}
+                            else if(count==31 && month.equals("November")){break;}
+                            else if(count==32 && month.equals("December")){break;}
+                        }
+                        System.out.println();
+                    }
+                }
+                else if(day.equals("thursday")){
+                    int count=1;
+                    System.out.printf("                            ");
+                    for(int i=1;i<=6;i++){
+                        if(i==1){
+                            for(int k=1;k<=3;k++){
+                                System.out.printf("%-7d",count);
+                                count++;
+
+                            }
+                        }
+                        else{
+                            for(int j=1;j<=7;j++){
+                                System.out.printf("%-7d",count);
+                                count++;
+                                if (count==32 && month.equals("January")){break;}
+                                else if(count==30 && month.equals("February")){break;}
+                                else if(count==32 && month.equals("March")){break;}
+                                else if(count==32 && month.equals("April")){break;}
+                                else if(count==32 && month.equals("May")){break;}
+                                else if(count==31 && month.equals("June")){break;}
+                                else if(count==32 && month.equals("July")){break;}
+                                else if(count==32 && month.equals("August")){break;}
+                                else if(count==31 && month.equals("September")){break;}
+                                else if(count==32 && month.equals("October")){break;}
+                                else if(count==31 && month.equals("November")){break;}
+                                else if(count==32 && month.equals("December")){break;}
+                            }
+                        }if (count==32 && month.equals("January")){break;}
+                        else if(count==30 && month.equals("February")){break;}
+                        else if(count==32 && month.equals("March")){break;}
+                        else if(count==32 && month.equals("April")){break;}
+                        else if(count==32 && month.equals("May")){break;}
+                        else if(count==31 && month.equals("June")){break;}
+                        else if(count==32 && month.equals("July")){break;}
+                        else if(count==32 && month.equals("August")){break;}
+                        else if(count==31 && month.equals("September")){break;}
+                        else if(count==32 && month.equals("October")){break;}
+                        else if(count==31 && month.equals("November")){break;}
+                        else if(count==32 && month.equals("December")){break;}
+                        System.out.println();
+                    }
+                }
+                else if(day.equals("friday")){
+                    int count=1;
+                    System.out.printf("                                   ");
+                    for(int i=1;i<=6;i++){
+                        if(i==1){
+                            for(int k=1;k<=2;k++){
+                                System.out.printf("%-7d",count);
+                                count++;
+
+                            }
+                        }
+                        else{
+                            for(int j=1;j<=7;j++){
+                                System.out.printf("%-7d",count);
+                                count++;
+                                if (count==32 && month.equals("January")){break;}
+                                else if(count==30 && month.equals("February")){break;}
+                                else if(count==32 && month.equals("March")){break;}
+                                else if(count==32 && month.equals("April")){break;}
+                                else if(count==32 && month.equals("May")){break;}
+                                else if(count==31 && month.equals("June")){break;}
+                                else if(count==32 && month.equals("July")){break;}
+                                else if(count==32 && month.equals("August")){break;}
+                                else if(count==31 && month.equals("September")){break;}
+                                else if(count==32 && month.equals("October")){break;}
+                                else if(count==31 && month.equals("November")){break;}
+                                else if(count==32 && month.equals("December")){break;}
+                            }
+                            if (count==32 && month.equals("January")){break;}
+                            else if(count==30 && month.equals("February")){break;}
+                            else if(count==32 && month.equals("March")){break;}
+                            else if(count==32 && month.equals("April")){break;}
+                            else if(count==32 && month.equals("May")){break;}
+                            else if(count==31 && month.equals("June")){break;}
+                            else if(count==32 && month.equals("July")){break;}
+                            else if(count==32 && month.equals("August")){break;}
+                            else if(count==31 && month.equals("September")){break;}
+                            else if(count==32 && month.equals("October")){break;}
+                            else if(count==31 && month.equals("November")){break;}
+                            else if(count==32 && month.equals("December")){break;}
+                        }
+                        System.out.println();
+                    }
+                }
+                else if(day.equals("saturday")){
+                    int count=1;
+                    System.out.printf("                                          ");
+                    for(int i=1;i<=6;i++){
+                        if(i==1){
+                            for(int k=1;k<=1;k++){
+                                System.out.printf("%-7d",count);
+                                count++;
+
+                            }
+                        }
+                        else{
+                            for(int j=1;j<=7;j++){
+                                System.out.printf("%-7d",count);
+                                count++;
+                                if (count==32 && month.equals("January")){break;}
+                                else if(count==30 && month.equals("February")){break;}
+                                else if(count==32 && month.equals("March")){break;}
+                                else if(count==32 && month.equals("April")){break;}
+                                else if(count==32 && month.equals("May")){break;}
+                                else if(count==31 && month.equals("June")){break;}
+                                else if(count==32 && month.equals("July")){break;}
+                                else if(count==32 && month.equals("August")){break;}
+                                else if(count==31 && month.equals("September")){break;}
+                                else if(count==32 && month.equals("October")){break;}
+                                else if(count==31 && month.equals("November")){break;}
+                                else if(count==32 && month.equals("December")){break;}
+                            }
+                            if (count==32 && month.equals("January")){break;}
+                            else if(count==30 && month.equals("February")){break;}
+                            else if(count==32 && month.equals("March")){break;}
+                            else if(count==32 && month.equals("April")){break;}
+                            else if(count==32 && month.equals("May")){break;}
+                            else if(count==31 && month.equals("June")){break;}
+                            else if(count==32 && month.equals("July")){break;}
+                            else if(count==32 && month.equals("August")){break;}
+                            else if(count==31 && month.equals("September")){break;}
+                            else if(count==32 && month.equals("October")){break;}
+                            else if(count==31 && month.equals("November")){break;}
+                            else if(count==32 && month.equals("December")){break;}
+                        }
+                        System.out.println();
+                    }
+                }
+
+            }
+        }
+        else{
+            for (int a=0;a<12;a++){
+                switch(a){
+                    case 0:month="January";break;
+                    case 1:month="February";break;
+                    case 2:month="March";break;
+                    case 3:month="April";break;
+                    case 4:month="May";break;
+                    case 5:month="June";break;
+                    case 6:month="July";break;
+                    case 7:month="August";break;
+                    case 8:month="September";break;
+                    case 9:month="October";break;
+                    case 10:month="November";break;
+                    case 11:month="December";break;
+                }
+                switch (month){
+                    case "January":break;
+                    case "February":firstDay+=31;break;
+                    case "March":firstDay+=28;break;
+                    case "April":firstDay+=31;break;
+                    case "May":firstDay+=31;break;
+                    case "June":firstDay+=31;break;
+                    case "July":firstDay+=30;break;
+                    case "August":firstDay+=31;break;
+                    case "September":firstDay+=31;break;
+                    case "October":firstDay+=30;break;
+                    case "November":firstDay+=31;break;
+                    case "December":firstDay+=30;break;
+                }
+                switch (firstDay%7) {
+                    case 0:day="sunday";break;
+                    case 1:day="monday";break;
+                    case 2:day="tuesday";break;
+                    case 3:day="wednesday";break;
+                    case 4:day="thursday";break;
+                    case 5:day="friday";break;
+                    case 6:day="saturday";break;
+                }
+                System.out.println();
+                System.out.printf("               %s %d %n",month,year);
+                System.out.println("_____________________________________________");
+                System.out.println("Sun    Mon    Tue    Wed    Thu    Fri    Sat");
+                if(day.equals("sunday")){
+                    int count=1;
+                    for(int i=1;i<=6;i++){
+                        for(int j=1;j<=7;j++){
+                            System.out.printf("%-7d",count);
+                            count++;
+                            if (count==32 && month.equals("January")){break;}
+                            else if(count==29 && month.equals("February")){break;}
+                            else if(count==32 && month.equals("March")){break;}
+                            else if(count==32 && month.equals("April")){break;}
+                            else if(count==32 && month.equals("May")){break;}
+                            else if(count==31 && month.equals("June")){break;}
+                            else if(count==32 && month.equals("July")){break;}
+                            else if(count==32 && month.equals("August")){break;}
+                            else if(count==31 && month.equals("September")){break;}
+                            else if(count==32 && month.equals("October")){break;}
+                            else if(count==31 && month.equals("November")){break;}
+                            else if(count==32 && month.equals("December")){break;}
+                        }if (count==32 && month.equals("January")){break;}
+                        else if(count==29 && month.equals("February")){break;}
+                        else if(count==32 && month.equals("March")){break;}
+                        else if(count==32 && month.equals("April")){break;}
+                        else if(count==32 && month.equals("May")){break;}
+                        else if(count==31 && month.equals("June")){break;}
+                        else if(count==32 && month.equals("July")){break;}
+                        else if(count==32 && month.equals("August")){break;}
+                        else if(count==31 && month.equals("September")){break;}
+                        else if(count==32 && month.equals("October")){break;}
+                        else if(count==31 && month.equals("November")){break;}
+                        else if(count==32 && month.equals("December")){break;}
+                        System.out.println();
+                    }
+                }
+                else if(day.equals("monday")){
+                    int count=1;
+                    System.out.printf("       ");
+                    for(int i=1;i<=6;i++){
+                        if(i==1){
+                            for(int k=1;k<=6;k++){
+                                System.out.printf("%-7d",count);
+                                count++;
+
+                            }
+                        }
+                        else{
+                            for(int j=1;j<=7;j++){
+                                System.out.printf("%-7d",count);
+                                count++;
+                                if (count==32 && month.equals("January")){break;}
+                                else if(count==29 && month.equals("February")){break;}
+                                else if(count==32 && month.equals("March")){break;}
+                                else if(count==32 && month.equals("April")){break;}
+                                else if(count==32 && month.equals("May")){break;}
+                                else if(count==31 && month.equals("June")){break;}
+                                else if(count==32 && month.equals("July")){break;}
+                                else if(count==32 && month.equals("August")){break;}
+                                else if(count==31 && month.equals("September")){break;}
+                                else if(count==32 && month.equals("October")){break;}
+                                else if(count==31 && month.equals("November")){break;}
+                                else if(count==32 && month.equals("December")){break;}
+                            }
+                        }if (count==32 && month.equals("January")){break;}
+                        else if(count==29 && month.equals("February")){break;}
+                        else if(count==32 && month.equals("March")){break;}
+                        else if(count==32 && month.equals("April")){break;}
+                        else if(count==32 && month.equals("May")){break;}
+                        else if(count==31 && month.equals("June")){break;}
+                        else if(count==32 && month.equals("July")){break;}
+                        else if(count==32 && month.equals("August")){break;}
+                        else if(count==31 && month.equals("September")){break;}
+                        else if(count==32 && month.equals("October")){break;}
+                        else if(count==31 && month.equals("November")){break;}
+                        else if(count==32 && month.equals("December")){break;}
+                        System.out.println();
+                    }
+                }
+                else if(day.equals("tuesday")){
+                    int count=1;
+                    System.out.printf("              ");
+                    for(int i=1;i<=6;i++){
+                        if(i==1){
+                            for(int k=1;k<=5;k++){
+                                System.out.printf("%-7d",count);
+                                count++;
+
+                            }
+                        }
+                        else{
+                            for(int j=1;j<=7;j++){
+                                System.out.printf("%-7d",count);
+                                count++;
+                                if (count==32 && month.equals("January")){break;}
+                                else if(count==29 && month.equals("February")){break;}
+                                else if(count==32 && month.equals("March")){break;}
+                                else if(count==32 && month.equals("April")){break;}
+                                else if(count==32 && month.equals("May")){break;}
+                                else if(count==31 && month.equals("June")){break;}
+                                else if(count==32 && month.equals("July")){break;}
+                                else if(count==32 && month.equals("August")){break;}
+                                else if(count==31 && month.equals("September")){break;}
+                                else if(count==32 && month.equals("October")){break;}
+                                else if(count==31 && month.equals("November")){break;}
+                                else if(count==32 && month.equals("December")){break;}
+                            }
+                        }if (count==32 && month.equals("January")){break;}
+                        else if(count==29 && month.equals("February")){break;}
+                        else if(count==32 && month.equals("March")){break;}
+                        else if(count==32 && month.equals("April")){break;}
+                        else if(count==32 && month.equals("May")){break;}
+                        else if(count==31 && month.equals("June")){break;}
+                        else if(count==32 && month.equals("July")){break;}
+                        else if(count==32 && month.equals("August")){break;}
+                        else if(count==31 && month.equals("September")){break;}
+                        else if(count==32 && month.equals("October")){break;}
+                        else if(count==31 && month.equals("November")){break;}
+                        else if(count==32 && month.equals("December")){break;}
+                        System.out.println();
+                    }
+                }
+                else if(day.equals("wednesday")){
+                    int count=1;
+                    System.out.printf("                     ");
+                    for(int i=1;i<=6;i++){
+                        if(i==1){
+                            for(int k=1;k<=4;k++){
+                                System.out.printf("%-7d",count);
+                                count++;
+
+                            }
+                        }
+                        else{
+                            for(int j=1;j<=7;j++){
+                                System.out.printf("%-7d",count);
+                                count++;
+                                if (count==32 && month.equals("January")){break;}
+                                else if(count==29 && month.equals("February")){break;}
+                                else if(count==32 && month.equals("March")){break;}
+                                else if(count==32 && month.equals("April")){break;}
+                                else if(count==32 && month.equals("May")){break;}
+                                else if(count==31 && month.equals("June")){break;}
+                                else if(count==32 && month.equals("July")){break;}
+                                else if(count==32 && month.equals("August")){break;}
+                                else if(count==31 && month.equals("September")){break;}
+                                else if(count==32 && month.equals("October")){break;}
+                                else if(count==31 && month.equals("November")){break;}
+                                else if(count==32 && month.equals("December")){break;}
+                            }
+                            if (count==32 && month.equals("January")){break;}
+                            else if(count==29 && month.equals("February")){break;}
+                            else if(count==32 && month.equals("March")){break;}
+                            else if(count==32 && month.equals("April")){break;}
+                            else if(count==32 && month.equals("May")){break;}
+                            else if(count==31 && month.equals("June")){break;}
+                            else if(count==32 && month.equals("July")){break;}
+                            else if(count==32 && month.equals("August")){break;}
+                            else if(count==31 && month.equals("September")){break;}
+                            else if(count==32 && month.equals("October")){break;}
+                            else if(count==31 && month.equals("November")){break;}
+                            else if(count==32 && month.equals("December")){break;}
+                        }
+                        System.out.println();
+                    }
+                }
+                else if(day.equals("thursday")){
+                    int count=1;
+                    System.out.printf("                            ");
+                    for(int i=1;i<=6;i++){
+                        if(i==1){
+                            for(int k=1;k<=3;k++){
+                                System.out.printf("%-7d",count);
+                                count++;
+
+                            }
+                        }
+                        else{
+                            for(int j=1;j<=7;j++){
+                                System.out.printf("%-7d",count);
+                                count++;
+                                if (count==32 && month.equals("January")){break;}
+                                else if(count==29 && month.equals("February")){break;}
+                                else if(count==32 && month.equals("March")){break;}
+                                else if(count==32 && month.equals("April")){break;}
+                                else if(count==32 && month.equals("May")){break;}
+                                else if(count==31 && month.equals("June")){break;}
+                                else if(count==32 && month.equals("July")){break;}
+                                else if(count==32 && month.equals("August")){break;}
+                                else if(count==31 && month.equals("September")){break;}
+                                else if(count==32 && month.equals("October")){break;}
+                                else if(count==31 && month.equals("November")){break;}
+                                else if(count==32 && month.equals("December")){break;}
+                            }
+                        }if (count==32 && month.equals("January")){break;}
+                        else if(count==29 && month.equals("February")){break;}
+                        else if(count==32 && month.equals("March")){break;}
+                        else if(count==32 && month.equals("April")){break;}
+                        else if(count==32 && month.equals("May")){break;}
+                        else if(count==31 && month.equals("June")){break;}
+                        else if(count==32 && month.equals("July")){break;}
+                        else if(count==32 && month.equals("August")){break;}
+                        else if(count==31 && month.equals("September")){break;}
+                        else if(count==32 && month.equals("October")){break;}
+                        else if(count==31 && month.equals("November")){break;}
+                        else if(count==32 && month.equals("December")){break;}
+                        System.out.println();
+                    }
+                }
+                else if(day.equals("friday")){
+                    int count=1;
+                    System.out.printf("                                   ");
+                    for(int i=1;i<=6;i++){
+                        if(i==1){
+                            for(int k=1;k<=2;k++){
+                                System.out.printf("%-7d",count);
+                                count++;
+
+                            }
+                        }
+                        else{
+                            for(int j=1;j<=7;j++){
+                                System.out.printf("%-7d",count);
+                                count++;
+                                if (count==32 && month.equals("January")){break;}
+                                else if(count==29 && month.equals("February")){break;}
+                                else if(count==32 && month.equals("March")){break;}
+                                else if(count==32 && month.equals("April")){break;}
+                                else if(count==32 && month.equals("May")){break;}
+                                else if(count==31 && month.equals("June")){break;}
+                                else if(count==32 && month.equals("July")){break;}
+                                else if(count==32 && month.equals("August")){break;}
+                                else if(count==31 && month.equals("September")){break;}
+                                else if(count==32 && month.equals("October")){break;}
+                                else if(count==31 && month.equals("November")){break;}
+                                else if(count==32 && month.equals("December")){break;}
+                            }
+                            if (count==32 && month.equals("January")){break;}
+                            else if(count==29 && month.equals("February")){break;}
+                            else if(count==32 && month.equals("March")){break;}
+                            else if(count==32 && month.equals("April")){break;}
+                            else if(count==32 && month.equals("May")){break;}
+                            else if(count==31 && month.equals("June")){break;}
+                            else if(count==32 && month.equals("July")){break;}
+                            else if(count==32 && month.equals("August")){break;}
+                            else if(count==31 && month.equals("September")){break;}
+                            else if(count==32 && month.equals("October")){break;}
+                            else if(count==31 && month.equals("November")){break;}
+                            else if(count==32 && month.equals("December")){break;}
+                        }
+                        System.out.println();
+                    }
+                }
+                else if(day.equals("saturday")){
+                    int count=1;
+                    System.out.printf("                                          ");
+                    for(int i=1;i<=6;i++){
+                        if(i==1){
+                            for(int k=1;k<=1;k++){
+                                System.out.printf("%-7d",count);
+                                count++;
+
+                            }
+                        }
+                        else{
+                            for(int j=1;j<=7;j++){
+                                System.out.printf("%-7d",count);
+                                count++;
+                                if (count==32 && month.equals("January")){break;}
+                                else if(count==29 && month.equals("February")){break;}
+                                else if(count==32 && month.equals("March")){break;}
+                                else if(count==32 && month.equals("April")){break;}
+                                else if(count==32 && month.equals("May")){break;}
+                                else if(count==31 && month.equals("June")){break;}
+                                else if(count==32 && month.equals("July")){break;}
+                                else if(count==32 && month.equals("August")){break;}
+                                else if(count==31 && month.equals("September")){break;}
+                                else if(count==32 && month.equals("October")){break;}
+                                else if(count==31 && month.equals("November")){break;}
+                                else if(count==32 && month.equals("December")){break;}
+                            }
+                            if (count==32 && month.equals("January")){break;}
+                            else if(count==29 && month.equals("February")){break;}
+                            else if(count==32 && month.equals("March")){break;}
+                            else if(count==32 && month.equals("April")){break;}
+                            else if(count==32 && month.equals("May")){break;}
+                            else if(count==31 && month.equals("June")){break;}
+                            else if(count==32 && month.equals("July")){break;}
+                            else if(count==32 && month.equals("August")){break;}
+                            else if(count==31 && month.equals("September")){break;}
+                            else if(count==32 && month.equals("October")){break;}
+                            else if(count==31 && month.equals("November")){break;}
+                            else if(count==32 && month.equals("December")){break;}
+                        }
+                        System.out.println();
+                    }
+                }
+
+            }
+
+        }
 
     }
 
