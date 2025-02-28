@@ -158,25 +158,21 @@ public class ChapterSix {
             System.out.println();
         }
     }
-*/  //6.7 henuz yapamadım
-/*    public static void main(String[] args) {
+*/  //6.7
+/*        public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("enter amount invested: " );
         double invested=sc.nextDouble();
         System.out.print("annual interest rate: " );
-        double rate=sc.nextDouble();
-        //double interest=rate/100;
+        double rate =sc.nextDouble()/100;
         System.out.println("year for future investement: ");
         int year=sc.nextInt();
-        System.out.println("Years   Future value");
-        for (int i=1;i<=year;i++) {
-            for(int j=1;j<=year;j++){System.out.println(i+"       "+futureInvestmentValue(invested, rate, year));}
+        for(int i=1;i<=year;i++){
+            futureInvestmentValue(invested,rate,i,year);
         }
     }
-    public static double futureInvestmentValue(double investmentAmount, double monthlyInterestRate, int years){
-            for (int i=1;i<=12;i++) {
-                investmentAmount = investmentAmount * monthlyInterestRate;}
-        return investmentAmount;
+    public static void futureInvestmentValue(double investmentAmount, double InterestRate, double i, int years){
+        System.out.print(investmentAmount * Math.pow(1 + (InterestRate/years), years*i));
     }
 */
 /*    //6.8
@@ -400,9 +396,326 @@ public class ChapterSix {
 
     }
 */
+    //6.26
+/*    public static void main(String[] args) {
+        System.out.println(prime(9));
+        int count=1;
+        System.out.printf("%d ", 2);
+
+        for (int i=3; count<100;i++) {
+
+            if(prime(i)==true && palindromic(i)==true) {
+                System.out.printf("%d ", i);
+                count++;
+                if(count%10==0){
+                    System.out.println();
+                }
+                else{continue;}
+            }
 
 
 
+        }
+
+    }
+    public static boolean prime(int n) {
+        boolean prime = true;
+        for (int i=2; i<n; i++) {
+            if (n % i == 0) {
+                prime = false;
+                break;
+            }
+        }
+        return prime;
+    }
+    public static boolean palindromic(int n) {
+        String s = String.valueOf(n);
+        String reversed="";
+        for (int i=s.length()-1; i>=0; i--) {
+            reversed += s.charAt(i);
+        }
+        if(reversed.equals(s)){
+            return true;
+        }
+        else {return false;}
+    }
+*/
+/*    //6.27
+    public static void main(String[] args) {
+        System.out.println(prime(9));
+        int count=0;
+
+        for (int i=13; count<100;i++) {
+
+            if(prime(i)==true && emirp(i)==true) {
+                System.out.printf("%d ", i);
+                count++;
+                if(count%10==0){
+                     System.out.println();
+                }
+                else{continue;}
+            }
+        }
+    }
+    public static boolean prime(int n) {
+        boolean prime = true;
+        for (int i=2; i<n; i++) {
+            if (n % i == 0) {
+                prime = false;
+                break;
+            }
+        }
+        return prime;
+    }
+    public static boolean emirp(int n) {
+        String s = String.valueOf(n);
+        String reversed="";
+        for (int i=s.length()-1; i>=0; i--) {
+            reversed += s.charAt(i);
+        }
+        int k=Integer.parseInt(reversed);
+        if(!reversed.equals(s)){
+            if(prime(k)==true){return true;}
+            else{return false;}
+        }
+        else {return false;}
+    }
+*/  //6.28
+/*    public static void main(String[] args) {
+        System.out.println("p                2^p-1");
+        System.out.println("______________________");
+        for (int p=2; p<=31; p++) {
+            if(mersenne(p)==-1){ continue;}
+            else if(mersenne(p)==-1){continue;}
+            else{
+                System.out.println(p+"                "+mersenne(p));}
+        }
+    }
+    public static int mersenne(int a){
+        int c=-1;
+        double b=Math.pow(2,a)-1;
+        if (a==2){
+            return (int)b;
+        }
+        else{
+            for(int i=2;i<a;i++){
+                if(a%i!=0){
+                    c=(int)b;
+                    break;
+                }
+                else if(a%i==0){
+                    break;
+                }
+            }
+        }
+        return c;
+
+    }
+*/ /* //6.29
+public static void main(String[] args) {
+    for (int i=3; i<=1000; i++) {
+        int k=0;
+        if (twinPrimes(i)==true) {
+            for (int j=i+1; j<=1000; j++) {
+                if (twinPrimes(j)==true) {
+                    System.out.printf("(%d,%d)%n",i,j);
+                    break;
+                }
+            }
+        }
+    }
+}
+
+    public static boolean twinPrimes(int number) {
+        boolean twinPrime = true;
+        for (int i=2; i<number; i++) {
+            if (number % i == 0) {
+                twinPrime = false;
+            }
+        }
+        return twinPrime;
+    }
+*/
+/*    //6.30
+    public static void main(String[] args) {
+        int n=craps();
+        if(n==2||n==3||n==12){
+            System.out.printf("point is %d you lose%n",n);
+        }
+        else if(n==7||n==11){
+            System.out.printf("point is %d you win%n",n);
+        }
+        else{
+            System.out.printf( "point is %d roll again%n",n);
+
+            int m=craps();
+            if(n==2||n==3||n==12){
+                System.out.printf("point is %d you lose%n",n);
+            }
+            else if(n==7||n==11) {
+                System.out.printf("point is %d you win%n",n);
+            }
+            else{
+                System.out.println("you lose");
+            }
+        }
+
+    }
+    public static int craps() {
+        int n=(int)(Math.random()*7);
+        int m=(int)(Math.random()*7);
+        return n+m;
+    }
+*/
+//6.31
+
+ /*   public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a credit card number: ");
+        long number = input.nextLong();
+        if (isValid(number)) {
+            System.out.println(number + " is a valid credit card number.");
+        } else {
+            System.out.println(number + " is an invalid credit card number.");
+        }
+    }
+
+        public static boolean isValid(long number) {
+            return (getSize(number) >= 13 && getSize(number) <= 16) && (prefixMatched(number, 4) || prefixMatched(number, 5) || prefixMatched(number, 37) || prefixMatched(number, 6)) &&
+                    ((sumOfDoubleEvenPlace(number) + sumOfOddPlace(number)) % 10 == 0);
+        }
+
+        public static int sumOfDoubleEvenPlace(long number) {
+            String numStr = String.valueOf(number);
+            int sum = 0;
+
+            for (int i = numStr.length() - 2; i >= 0; i -= 2) {
+                int doubled = (numStr.charAt(i) - '0') * 2;
+                sum += getDigit(doubled);
+            }
+            return sum;
+        }
+
+        public static int getDigit(int number) {
+            return (number < 10) ? number : (number / 10 + number % 10);
+        }
+
+        public static int sumOfOddPlace(long number) {
+            String numStr = String.valueOf(number);
+            int sum = 0;
+
+            for (int i = numStr.length() - 1; i >= 0; i -= 2) {
+                sum += numStr.charAt(i) - '0';
+            }
+            return sum;
+        }
+
+        public static boolean prefixMatched(long number, int d) {
+            int prefix = (int) getPrefix(number, getSize(d));
+            return prefix == d;
+        }
+
+        public static int getSize(long d) {
+            return String.valueOf(d).length();
+        }
+
+        public static long getPrefix(long number, int k) {
+            String numStr = String.valueOf(number);
+            return (numStr.length() < k) ? number : Long.parseLong(numStr.substring(0, k));
+        }
+*/
+
+    //6.32
+/*    public static void main(String[] args) {
+        for(int i=0;i<10000;i++){
+            int n=craps();
+
+        if(n==2||n==3||n==12){
+            System.out.printf("point is %d you lose%n",n);
+        }
+        else if(n==7||n==11){
+            System.out.printf("point is %d you win%n",n);
+        }
+        else{
+            System.out.printf( "point is %d roll again%n",n);
+
+            int m=craps();
+            if(n==2||n==3||n==12){
+                System.out.printf("point is %d you lose%n",n);
+            }
+            else if(n==7||n==11) {
+                System.out.printf("point is %d you win%n",n);
+            }
+            else{
+                System.out.println("you lose");
+            }
+        }
+        }
+
+    }
+    public static int craps() {
+        int n=(int)(Math.random()*7);
+        int m=(int)(Math.random()*7);
+        return n+m;
+    }
+*/
+/*    //6.33
+    public static void main(String[] args) {
+        currentTime();
+    }
+    public static void currentTime() {
+        long time = System.currentTimeMillis();
+        int seconds = (int) (time / 1000);
+        int currentSeconds = seconds % 60;
+        int minutes = seconds / 60;
+        int currentMinutes = minutes % 60;
+        int hours = minutes / 60;
+        int currentHours = hours % 24;
+        int days = hours / 24;
+        int currentDays = days % 30;
+        int months = days / 30;
+        int currentMonths = months % 12;
+        int years=months / 12;
+        System.out.printf("Current date and time is: %d %d, %d %d:%d:%d ",currentMonths,currentDays,years,currentHours,currentMinutes,currentSeconds);
+
+    }
+*/  //6.35
+/*   public static void main(String[] args) {
+        System.out.println(area(5.5));
+    }
+    public static double area(double side) {
+        double area = (5*side*side)/(4*Math.tan(Math.toRadians(36)));
+        return area;
+    }
+*/    //6.36
+/*    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter a number of sides and a side: ");
+        int sides = sc.nextInt();
+        double side=sc.nextDouble();
+        System.out.println(area(sides,side));
+    }
+    public static double area(int sides,double side) {
+        double area = (sides*side*side)/(4*Math.tan(Math.toRadians(180/sides)));
+        return area;
+    }
+*///6.37
+/*    public static void main(String[] args) {
+        System.out.println(format(34,4));
+    }
+    public static String format(int number, int width){
+        String output = ""+number;
+        if(output.length() > width){
+            return output;
+        }
+        int diff=width-output.length();
+        String newOutput="";
+        for(int i=0; i<diff; i++){
+            newOutput += "0";
+        }
+        return newOutput+output;
+    }
+*/
 
 
 
