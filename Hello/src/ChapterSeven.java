@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Scanner;
 import java.util.jar.JarOutputStream;
 
@@ -605,6 +607,145 @@ public class ChapterSeven {
 }
 */
 //7.22
+/*    public static void main(String[] args) {
+        String [] arr=new String[8];
+        String [] arr2=new String[8];
+        String [] arr3=new String[8];
+        String [] arr4=new String[8];
+        String [] arr5=new String[8];
+        String [] arr6=new String[8];
+        String [] arr7=new String[8];
+        String [] arr8=new String[8];
+        for (int i = 0; i < 8; i++) {
+            arr[i]="Q";
+            for (int j = 0; j < 8; j++) {
+                //j cant be same with i and shouldnt be on same diagonal
+                if(j==i && j==i+1){break;}
+                else if(j==i-1){break;}
+                else{arr2[j]="Q";
+                    for (int k = 0; k < 8; k++) {
+                        if (k == j && k == j + 1 && k == i && k == i + 2) {
+                            break;
+                        } else if (k == j - 1 && k == i - 2) {
+                            break;
+                        } else {
+                            arr3[j] = "Q";
+                            for (int l = 0; l < 8; l++) {
+                                if (l == k && l == k + 1 && l == i + 3 && l == i && l == j + 2 && l == j) {
+                                    break;
+                                } else if (l == k - 1 && l == i - 3 && l == j - 2) {
+                                    break;
+                                } else {
+                                arr4[j] = "Q";
+                                for (int m = 0; m < 8; m++) {
+                                    if (m == l && m == l + 1 && m == k + 2 && m == k && m == j + 3 && m == j && m == i && m == i + 4) {
+                                        break;
+                                    } else if (m == l - 1 && m == k - 2 && m == j - 3 && m == i - 4) {
+                                        break;
+                                    } else {
+                                    arr5[j] = "Q";
+                                    for (int n = 0; n < 8; n++) {
+                                    if (n == m && n == m + 1 && n == l && n == l + 2 && n == k && n == k + 3 && m == j && n == j + 4 && m == i && n == i + 5) {
+                                        break;
+                                    } else if (n == m - 1 && n == l - 2 && m == k - 3 && m == j - 4 && m == i - 5) {
+                                        break;
+                                    } else {
+                                        arr6[j] = "Q";
+                                        for (int o = 0; o < 8; o++) {
+                                        if (o == n && o == n + 1 && o == m && o == m + 2 && o == l && o == l + 3 && o == k && o == k + 4 && m == j && o == j + 5 && m == i && o == i + 6) {
+                                            break;
+                                        } else if (o == n - 1 && o == m - 2 && o == l - 3 && o == k - 4 && m == j - 5 && o == i - 6) {
+                                            break;
+                                        } else {
+                                            arr7[j] = "Q";
+                                            for (int p = 0; p < 8; p++) {
+                                            if (p == o && p == o + 1 && p == n && p == n + 2 && p == m && p == m + 3 && p == l && p == l + 4 && p == k && p == k + 5 && m == j && p == j + 6 && m == i && p == i + 7) {
+                                                break;
+                                            } else if (p == o - 1 && p == n - 2 && p == m - 3 && p == l - 4 && p == k - 5 && m == j - 6 && p == i - 7) {
+                                                break;
+                                            } else {
+                                            arr8[j] = "Q";
+                                            for (int q = 0; q < 8; q++) {
+                                                System.out.print(arr[q]);
+                                            }
+                                            System.out.println();
+                                            for (int q = 0; q < 8; q++) {
+                                                System.out.print(arr2[q]);
+                                            }
+                                            System.out.println();
+                                            for (int q = 0; q < 8; q++) {
+                                                System.out.print(arr3[q]);
+                                            }
+                                            System.out.println();
+                                            for (int q = 0; q < 8; q++) {
+                                                System.out.print(arr4[q]);
+                                            }
+                                            System.out.println();
+                                            for (int q = 0; q < 8; q++) {
+                                                System.out.print(arr5[q]);
+                                            }
+                                            System.out.println();
+                                            for (int q = 0; q < 8; q++) {
+                                                System.out.print(arr6[q]);
+                                            }
+                                            System.out.println();
+                                            for (int q = 0; q < 8; q++) {
+                                                System.out.print(arr7[q]);
+                                            }
+                                            System.out.println();
+                                            for (int q = 0; q < 8; q++) {
+                                                System.out.print(arr8[q]);
+                                            }
+                                            System.out.println();
+                                            break;
+                                        }
+                                    }
+                                    }
+                                }
+                                }
+                            }
+                            }
+                        }
+                        }
+                    }
+                    }
+                }
+                }
 
+            }
+        }
+    }
+
+}*/
+//7.23
+   public static void main(String[] args) {
+        boolean[] locked = new boolean[100];
+        for (int i = 0; i < locked.length; i++) {
+            locked[i] = false;
+        }
+        for (int i = 1; i <= locked.length; i++) {
+            lock(locked,i);
+        }
+
+        print(locked);
+    }
+    public static void lock(boolean[] locked, int i) {
+        for (int j = 0; j < locked.length; j++) {
+            if ((j+1)%i==0) {
+                if (locked[j]) {
+                    locked[j] = false;
+                } else {
+                    locked[j] = true;
+                }
+            }
+        }
+    }
+    public static void print(boolean[] locked) {
+        for (int i = 0; i < locked.length; i++) {
+            if(locked[i]){
+                System.out.println((i+1)+". is open");
+            }
+        }
+    }
 
 }
