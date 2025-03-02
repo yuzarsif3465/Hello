@@ -888,7 +888,7 @@ public class ChapterSeven {
     }
 */
     //7.28
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int [] arr= new int [10];
         System.out.println("Enter 10 numbers: ");
@@ -905,6 +905,23 @@ public class ChapterSeven {
             }
         }
     }
+*/
+    //7.29
+    public static void main(String[] args) {
+        int [] arr=new int[52];
+        int sum=0;
+        for (int i = 0; i < 4; i++) {
+            sum+=cards();
+        }
+        System.out.println(24-sum+" that you need pick up for reach to 24");
+    }
+    public static int cards() {
+        int random=1+(int)(Math.random()*52);
+        return random%13;
+    }
+
+
+
 
 
 }
