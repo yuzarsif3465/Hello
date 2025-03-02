@@ -1,5 +1,6 @@
 import org.w3c.dom.ls.LSOutput;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.jar.JarOutputStream;
 
@@ -749,7 +750,7 @@ public class ChapterSeven {
     }
 */
     //7.24
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         int [] symbol=new int[4];
         while(symbol[0]<1 || symbol[1]<1 || symbol[2]<1 || symbol[3]<1){
             int k=random(symbol);
@@ -824,7 +825,36 @@ public class ChapterSeven {
         int total=spades+hearts+clubs+diamonds;
         System.out.println("number of picks: "+total);
     }
-
+*/ //7.25
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter first list: ");
+        int [] list1 = new int[6];
+        int [] list2 = new int[6];
+        for (int i = 0; i < list1.length; i++) {
+            list1[i] = in.nextInt();
+        }
+        System.out.println("Enter second list: ");
+        for (int i = 0; i < list2.length; i++) {
+            list2[i] = in.nextInt();
+        }
+        boolean flag = printList(list1, list2);
+        if(flag){
+            System.out.println("two lists are strictly identical");
+        }
+        else{
+            System.out.println("two lists are not strictly identical");
+        }
+    }
+    public static boolean printList(int [] list, int [] list2) {
+        boolean flag = true;
+        for (int i = 0; i < list.length; i++) {
+            if(list[i] != list2[i]){
+                flag = false;
+            }
+        }
+        return flag;
+    }
 
 
 
