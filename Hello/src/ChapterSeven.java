@@ -948,7 +948,7 @@ public class ChapterSeven {
     }
 */
     //7.31
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("enter size of the first list: ");
         int size = in.nextInt();
@@ -991,6 +991,36 @@ public class ChapterSeven {
 
         return merged; // Return the merged sorted list
     }
+*/  //7.32
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("enter size of the first list: ");
+        int size = in.nextInt();
+        int [] list1 = new int[size];
+        System.out.println("enter the elements of the first list: ");
+        for (int i = 0; i < size; i++) {
+            list1[i] = in.nextInt();
+        }
+        partition(list1);
+    }
+    public static void partition(int [] list) {
+        int [] arr=new int[list.length];
+        int partition = list[0];
+        int k=0;
+        int j=list.length-1;
+        for(int i=0;i<list.length;i++){
+            if(list[i]<partition){
+                arr[k++]=list[i];
+            }
+            else if(list[i]>partition){
+                arr[j--]=list[i];
+            }
+        }
+        arr[k++]=partition;
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+" ");
+        }
 
+    }
 
 }
