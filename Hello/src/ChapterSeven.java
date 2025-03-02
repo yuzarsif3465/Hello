@@ -856,7 +856,7 @@ public class ChapterSeven {
         return flag;
     }
 */// 7.26
-public static void main(String[] args) {
+/*public static void main(String[] args) {
     Scanner in = new Scanner(System.in);
     System.out.print("Enter size of first list: ");
     int size = in.nextInt();
@@ -886,5 +886,25 @@ public static void main(String[] args) {
         else {flag = false;}
         return flag;
     }
+*/
+    //7.28
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int [] arr= new int [10];
+        System.out.println("Enter 10 numbers: ");
+        for(int i=0; i<10; i++){
+            arr[i]=in.nextInt();
+        }
+        combination(arr);
+    }
+    public static void combination(int[] arr){
+        for(int i=0; i<arr.length; i++){
+            System.out.println(arr[i]+" "+arr[i]);
+            for(int j=i+1; j<arr.length; j++){
+                System.out.println(arr[i]+" "+arr[j]);
+            }
+        }
+    }
+
 
 }
