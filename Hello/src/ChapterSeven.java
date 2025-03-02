@@ -718,7 +718,7 @@ public class ChapterSeven {
 
 }*/
 //7.23
-   public static void main(String[] args) {
+/*   public static void main(String[] args) {
         boolean[] locked = new boolean[100];
         for (int i = 0; i < locked.length; i++) {
             locked[i] = false;
@@ -747,5 +747,86 @@ public class ChapterSeven {
             }
         }
     }
+*/
+    //7.24
+    public static void main(String[] args) {
+        int [] symbol=new int[4];
+        while(symbol[0]<1 || symbol[1]<1 || symbol[2]<1 || symbol[3]<1){
+            int k=random(symbol);
+            String m= number(k);
+            if(0<=k && k<=12){
+                symbol[0]+=0;//ı tried to increase +1 but with this way increased +2 so ı write =0 for symbol array
+                String suit="spades";
+                System.out.println(m+" of "+ suit);
+            }
+            else if(13<=k && k<=25){
+                symbol[1]+=0;
+                String suit="hearts";
+                System.out.println(m+" of "+ suit);
+            }
+            else if(26<=k && k<=38){
+                symbol[2]+=0;
+                String suit="clubs";
+                System.out.println(m+" of "+ suit);}
+            else if(39<=k && k<=52  ){
+                symbol[3]+=0;
+                String suit="diamonds";
+                System.out.println(m+" of "+ suit);}
+        }
+        howManyCardINeed(symbol);
+
+    }
+    public static int random(int[] symbol){
+        int k=1+(int)(Math.random()*52);
+        if(1<=k && k<=13){
+            symbol[0]+=1;
+        }
+        else if(14<=k && k<=26){
+            symbol[1]+=1;
+        }
+        else if(27<=k && k<=39){
+            symbol[2]+=1;
+        }
+        else if(40<=k && k<=52){
+            symbol[3]+=1;
+        }
+        return k;
+    }
+    public static String number(int k){
+        int remainder=k%13;
+        String card="";
+        switch(remainder){
+            case 0:card="Ace";break;
+            case 1:card="Two";break;
+            case 2:card="Three";break;
+            case 3:card="Four";break;
+            case 4:card="Five";break;
+            case 5:card="Six";break;
+            case 6:card="Seven";break;
+            case 7:card="Eight";break;
+            case 8:card="Nine";break;
+            case 9:card="Ten";break;
+            case 10:card="Jack";break;
+            case 11:card="Queen";break;
+            case 12:card="King";break;
+        }
+        return card;
+    }
+    public static void howManyCardINeed(int[] symbol){
+        int spades=0;
+        int hearts=0;
+        int clubs=0;
+        int diamonds=0;
+        if(symbol[0]<=4){ spades=4-symbol[0];}
+        if(symbol[1]<=4){ hearts=4-symbol[1];}
+        if(symbol[2]<=4){ clubs=4-symbol[2];}
+        if(symbol[3]<=4){ diamonds=4-symbol[3];}
+        int total=spades+hearts+clubs+diamonds;
+        System.out.println("number of picks: "+total);
+    }
+
+
+
+
 
 }
