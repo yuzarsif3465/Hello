@@ -992,7 +992,7 @@ public class ChapterSeven {
         return merged; // Return the merged sorted list
     }
 */  //7.32
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("enter size of the first list: ");
         int size = in.nextInt();
@@ -1022,5 +1022,24 @@ public class ChapterSeven {
         }
 
     }
-
+*/
+    //7.33
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String input = in.nextLine();
+        String k=sort(input);
+        System.out.println(k);
+    }
+    public static String sort(String input) {
+        char[] chars = new char[input.length()];
+        String sorted = "";
+        for (int i = 0; i < input.length(); i++) {
+            chars[i] = input.charAt(i);
+        }
+        Arrays.sort(chars);
+        for (int i = 0; i < input.length(); i++) {
+            sorted += chars[i];
+        }
+        return sorted;
+    }
 }
