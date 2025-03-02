@@ -825,7 +825,7 @@ public class ChapterSeven {
         int total=spades+hearts+clubs+diamonds;
         System.out.println("number of picks: "+total);
     }
-*/ //7.25
+*/ //7.27
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter first list: ");
@@ -838,15 +838,15 @@ public class ChapterSeven {
         for (int i = 0; i < list2.length; i++) {
             list2[i] = in.nextInt();
         }
-        boolean flag = printList(list1, list2);
+        boolean flag = equals(list1, list2);
         if(flag){
-            System.out.println("two lists are strictly identical");
+            System.out.println("two lists are  identical");
         }
         else{
-            System.out.println("two lists are not strictly identical");
+            System.out.println("two lists are not identical");
         }
     }
-    public static boolean printList(int [] list, int [] list2) {
+    public static boolean equals(int [] list, int [] list2) {
         boolean flag = true;
         for (int i = 0; i < list.length; i++) {
             if(list[i] != list2[i]){
@@ -855,7 +855,6 @@ public class ChapterSeven {
         }
         return flag;
     }
-
 
 
 
