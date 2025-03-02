@@ -906,7 +906,7 @@ public class ChapterSeven {
         }
     }
 */
-    //7.29
+/*    //7.29
     public static void main(String[] args) {
         int [] arr=new int[52];
         int sum=0;
@@ -919,7 +919,32 @@ public class ChapterSeven {
         int random=1+(int)(Math.random()*52);
         return random%13;
     }
-
+*/
+    //7.30
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("enter size of array");
+        int n = in.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = in.nextInt();
+        }
+        System.out.println(isConsecutiveFour(arr));
+        
+    }
+    public static boolean isConsecutiveFour(int[] values){
+        boolean sum =false;
+        for(int i = 0; i < values.length; i++){
+            if(values[i] == values[i+1] && values[i+1] == values[i+2]&& values[i+2] == values[i+3]){
+                sum=true;
+                break;
+            }
+            else{
+                sum=false;
+            }
+        }
+        return sum;
+    }
 
 
 
