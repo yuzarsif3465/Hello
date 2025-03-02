@@ -1,6 +1,7 @@
 import org.w3c.dom.ls.LSOutput;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.jar.JarOutputStream;
 
@@ -919,7 +920,7 @@ public class ChapterSeven {
         int random=1+(int)(Math.random()*52);
         return random%13;
     }
-*/
+*//*
     //7.30
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -945,8 +946,51 @@ public class ChapterSeven {
         }
         return sum;
     }
+*/
+    //7.31
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("enter size of the first list: ");
+        int size = in.nextInt();
+        int [] list1 = new int[size];
+        System.out.println("enter the elements of the first list: ");
+        for (int i = 0; i < size; i++) {
+            list1[i] = in.nextInt();
+        }
+        System.out.println("enter size of the second list: ");
+        int size2 = in.nextInt();
+        int [] list2 = new int[size2];
+        for (int i = 0; i < size2; i++) {
+            list2[i] = in.nextInt();
+        }
+        java.util.Arrays.sort(list1);
+        java.util.Arrays.sort(list2);
+        int [] listed= merge(list1,list2);
+        System.out.println(Arrays.toString(listed));
+    }
+    public static int[] merge(int[] list1, int[] list2) {
+        int[] merged = new int[list1.length + list2.length];
+        int i = 0, j = 0, k = 0;
+        while (i < list1.length && j < list2.length) {
+            if (list1[i] < list2[j]) {
+                merged[k++] = list1[i++];
+            } else {
+                merged[k++] = list2[j++];
+            }
+        }
 
+        // Add remaining elements from list1 (if any)
+        while (i < list1.length) {
+            merged[k++] = list1[i++];
+        }
 
+        // Add remaining elements from list2 (if any)
+        while (j < list2.length) {
+            merged[k++] = list2[j++];
+        }
+
+        return merged; // Return the merged sorted list
+    }
 
 
 }
