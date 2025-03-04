@@ -107,7 +107,7 @@ public class ChapterEight {
     }
 */
 //8.7
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         double[][] points = {{-1, 0, 3}, {-1, -1, -1}, {4, 1, 1},{2, 0.5, 9}, {3.5, 2, -1}, {3, 1.5, 3}, {-1.5, 4, 2},{5.5, 4, -0.5}};
         pointsNearest(points);
 
@@ -133,7 +133,41 @@ public class ChapterEight {
     public static double distance(double x,double y,double z, double x1,double y1,double z1) {
         return Math.sqrt((x-x1)*(x-x1)+(y-y1)*(y-y1)+(z-z1)*(z-z1));
     }
+*/  public static void main(String[] args) {
+        double[][] points = {{0, 0}, {-1, -1}, {1, 1},{2, 2}, {-2, -2}, {-3, -3}, {-4, -4,},{5, 5}};
+        pointsNearest(points);
 
+    }
+    public static void pointsNearest(double[][] matrix) {
+        double [][] arr = new double[matrix.length][matrix[0].length];
+        int p1=0,p2=1;
+        double shortestDistance= distance(matrix[p1][0],matrix[p1][1],matrix[p2][0],matrix[p2][1]);
+        for(int i=0;i<matrix.length;i++){
+            for(int j=1+i;j<matrix.length;j++){
+                double distance=distance(matrix[i][0],matrix[i][1],matrix[j][0],matrix[j][1]);
+                if(distance<shortestDistance){
+                    p1=i;
+                    p2=j;
+                    shortestDistance=distance;
+                }
+            }
+        }
+        for(int i=0;i<matrix.length;i++){
+            for(int j=1+i;j<matrix.length;j++){
+                double distance=distance(matrix[i][0],matrix[i][1],matrix[j][0],matrix[j][1]);
+                if(distance==shortestDistance){
+                    p1=i;
+                    p2=j;
+                    System.out.println("closest points are "+ matrix[p1][0]+","+matrix[p1][1]+" and "+ matrix[p2][0]+","+matrix[p2][1]);
+                }
+            }
+        }
+        System.out.println("closest distance is "+ shortestDistance);
+
+    }
+    public static double distance(double x,double y, double x1,double y1) {
+        return Math.sqrt((x-x1)*(x-x1)+(y-y1)*(y-y1));
+    }
 
 
 
