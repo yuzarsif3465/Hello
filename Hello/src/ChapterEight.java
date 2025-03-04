@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ChapterEight {
     //8.1
 /*    public static void main(String[] args) {
@@ -133,7 +135,8 @@ public class ChapterEight {
     public static double distance(double x,double y,double z, double x1,double y1,double z1) {
         return Math.sqrt((x-x1)*(x-x1)+(y-y1)*(y-y1)+(z-z1)*(z-z1));
     }
-*/  public static void main(String[] args) {
+*/  //8.8
+/*    public static void main(String[] args) {
         double[][] points = {{0, 0}, {-1, -1}, {1, 1},{2, 2}, {-2, -2}, {-3, -3}, {-4, -4,},{5, 5}};
         pointsNearest(points);
 
@@ -167,6 +170,93 @@ public class ChapterEight {
     }
     public static double distance(double x,double y, double x1,double y1) {
         return Math.sqrt((x-x1)*(x-x1)+(y-y1)*(y-y1));
+    }
+*/  //8.9
+    public static void main(String[] args) {
+        String [][] arr= new String [3][3];
+        game(arr);
+    }
+    public static void game(String[][] arr){
+        Scanner sc=new Scanner(System.in);
+        String player1="x";
+        String player2="o";
+        for(int i=0;i<5;i++){
+            System.out.println("first player enter where will you put your sign ");
+            int row=sc.nextInt();
+            int col=sc.nextInt();
+            System.out.println("second player enter where will you put your sign ");
+            int row1=sc.nextInt();
+            int col1=sc.nextInt();
+            arr[row][col]=player1;
+            arr[row1][col1]=player2;
+            if(arr[0][0]==player1&&arr[0][1]==player1&&arr[0][2]==player1){
+                System.out.println("first player won ");
+                break;
+            }
+            else if(arr[0][0]==player1&&arr[1][1]==player1&&arr[2][2]==player1){
+                System.out.println("firstplayer won ");
+                break;
+            }
+            else if(arr[0][0]==player1&&arr[1][0]==player1&&arr[2][0]==player1){
+                System.out.println("firstplayer won ");
+                break;
+            }
+            else if(arr[1][0]==player1&&arr[1][1]==player1&&arr[1][2]==player1){
+                System.out.println("second player won ");
+                break;
+            }
+            else if(arr[2][0]==player1&&arr[2][1]==player1&&arr[2][2]==player1){
+                System.out.println("second player won ");
+                break;
+            }
+            else if(arr[0][1]==player1&&arr[1][1]==player1&&arr[2][1]==player1){
+                System.out.println("firstplayer won ");
+                break;
+            }
+            else if(arr[0][2]==player1&&arr[1][2]==player1&&arr[2][2]==player1){
+                System.out.println("firstplayer won ");
+                break;
+            }
+            else if(arr[2][0]==player1&&arr[1][1]==player1&&arr[0][2]==player1){
+                System.out.println("firstplayer won ");
+                break;
+            }
+            else if(arr[0][0]==player2&&arr[0][1]==player2&&arr[0][2]==player2){
+                System.out.println("first player won ");
+                break;
+            }
+            else if(arr[0][0]==player2&&arr[1][1]==player2&&arr[2][2]==player2){
+                System.out.println("firstplayer won ");
+                break;
+            }
+            else if(arr[0][0]==player2&&arr[1][0]==player2&&arr[2][0]==player2){
+                System.out.println("firstplayer won ");
+                break;
+            }
+            else if(arr[1][0]==player2&&arr[1][1]==player2&&arr[1][2]==player2){
+                System.out.println("second player won ");
+                break;
+            }
+            else if(arr[2][0]==player2&&arr[2][1]==player2&&arr[2][2]==player2){
+                System.out.println("second player won ");
+                break;
+            }
+            else if(arr[0][1]==player2&&arr[1][1]==player2&&arr[2][1]==player2){
+                System.out.println("firstplayer won ");
+                break;
+            }
+            else if(arr[0][2]==player2&&arr[1][2]==player2&&arr[2][2]==player2){
+                System.out.println("firstplayer won ");
+                break;
+            }
+            else if(arr[2][0]==player2&&arr[1][1]==player2&&arr[0][2]==player2){
+                System.out.println("firstplayer won ");
+                break;
+            }
+
+
+        }
+
     }
 
 
