@@ -1023,8 +1023,8 @@ public class ChapterSeven {
 
     }
 */
-    //7.33
-    public static void main(String[] args) {
+    //7.34
+/*    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String input = in.nextLine();
         String k=sort(input);
@@ -1042,4 +1042,28 @@ public class ChapterSeven {
         }
         return sorted;
     }
+ */
+    //7.35
+    public static void main(String[] args) {
+        String [] array= {"write","read","yusuf","zorlu"};
+        hangman(array);
+    }
+    public static void hangman(String [] words){
+        Scanner sc = new Scanner(System.in);
+        int guess=words.length-1;
+        String word=words[0];
+
+        for(int i=0;i<word.length();i++){
+            char ch=sc.next().charAt(0);
+            for(int j=0;j<word.length();j++){
+                if(ch==word.charAt(i)){
+
+                }
+            }
+
+        }
+    }
+
+
 }
+
