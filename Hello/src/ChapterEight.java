@@ -44,7 +44,7 @@ public class ChapterEight {
     }
 */
     //8.4
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         int [][] hours={{2,4,3,4,5,8,8},{3,3,4,3,3,2,2},{7,3,4,3,3,4,4},{9,3,4,7,3,4,1},{3,5,4,3,6,3,8},{3,4,4,6,3,4,4},{3,7,4,8,3,8,4},{6,3,5,9,2,7,9}};
         compute(hours);
     }
@@ -75,5 +75,36 @@ public class ChapterEight {
             System.out.println(index[i]+" employee works "+sum[i]+" hours");
         }
     }
+*/ //8.5
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter first 3*3 matrix values: ");
+        double[][] matrix = new double[3][3];
+        double [][] matrix2 = new double[3][3];
+        for(int i=0;i<3;i++){
+            for(int j=0;j<3;j++){
+                matrix[i][j] = sc.nextDouble();
+            }
+        }
+        System.out.println("enter second 3*3 matrix values: ");
+        for(int j=0;j<3;j++){
+            for(int k=0;k<3;k++){
+                matrix2[j][k] = sc.nextDouble();
+            }
+        }
+        double [][] c=multiplyMatrix(matrix,matrix2);
+        for (int i=0;i<3;i++){
+            System.out.println(c[i][0]+" "+c[i][1]+" "+c[i][2]);
+        }
+    }
 
+    public static double[][] multiplyMatrix(double[][] a, double[][] b){
+        double[][] c = new double[3][3];
+        for(int i=0;i<3;i++){
+            for(int j=0;j<3;j++){
+                c[i][j] = a[i][0]*b[0][j]+a[i][1]*b[1][j]+a[i][2]*b[2][j];
+            }
+        }
+        return c;
+    }
 }
