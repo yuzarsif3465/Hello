@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class ChapterEight {
     //8.1
 /*    public static void main(String[] args) {
@@ -76,7 +74,7 @@ public class ChapterEight {
         }
     }
 */ //8.5
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("enter first 3*3 matrix values: ");
         double[][] matrix = new double[3][3];
@@ -107,4 +105,37 @@ public class ChapterEight {
         }
         return c;
     }
+*/
+//8.7
+    public static void main(String[] args) {
+        double[][] points = {{-1, 0, 3}, {-1, -1, -1}, {4, 1, 1},{2, 0.5, 9}, {3.5, 2, -1}, {3, 1.5, 3}, {-1.5, 4, 2},{5.5, 4, -0.5}};
+        pointsNearest(points);
+
+    }
+    public static void pointsNearest(double[][] matrix) {
+        int sum=0;
+        int p1=0,p2=1;
+        double shortestDistance= distance(matrix[p1][0],matrix[p1][1],matrix[p1][2],matrix[p2][0],matrix[p2][1],matrix[p2][2]);
+        for(int i=0;i<matrix.length;i++){
+            for(int j=1+i;j<matrix.length;j++){
+                double distance=distance(matrix[i][0],matrix[i][1],matrix[i][2],matrix[j][0],matrix[j][1],matrix[j][2]);
+                if(distance<shortestDistance){
+                    p1=i;
+                    p2=j;
+                    shortestDistance=distance;
+                }
+            }
+        }
+        System.out.println("closest points are "+ matrix[p1][0]+","+matrix[p1][1]+","+matrix[p1][2] +" and "+ matrix[p2][0]+","+matrix[p2][1]+","+matrix[p2][2]);
+        System.out.println("closest distance is "+ shortestDistance);
+
+    }
+    public static double distance(double x,double y,double z, double x1,double y1,double z1) {
+        return Math.sqrt((x-x1)*(x-x1)+(y-y1)*(y-y1)+(z-z1)*(z-z1));
+    }
+
+
+
+
+
 }
