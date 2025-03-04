@@ -172,7 +172,7 @@ public class ChapterEight {
         return Math.sqrt((x-x1)*(x-x1)+(y-y1)*(y-y1));
     }
 */  //8.9
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         String [][] arr= new String [3][3];
         game(arr);
     }
@@ -258,7 +258,87 @@ public class ChapterEight {
         }
 
     }
+*/  //8.14
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println(" what is the length of matrix");
+        int m = sc.nextInt();
+        int [][] matrix = new int[m][m];
+        for(int i=0;i<m;i++){
+            for(int j=0;j<m;j++){
+                matrix[i][j] = (int)(Math.random()*2);
+            }
+        }
+        for(int i=0;i<m;i++){
+            for(int j=0;j<m;j++){
+                System.out.print(matrix[i][j]+" ");
+            }
+            System.out.println();
+        }
+        explore(matrix);
+    }
+    public static void explore(int [][] matrix){
+        for(int i=0;i<matrix.length;i++) {
+            int sum = 0, sum1 = 0;
+            for (int j = 0; j < matrix.length; j++) {
+                if (matrix[i][j] == 0) {
+                    sum++;
+                }
+                if (matrix[i][j] == 1) {
+                    sum1++;
+                }
+            }
+            if (sum == matrix.length) {
+                System.out.println("all " + 0 + "s on row " + i);
+            }
+            if (sum1 == matrix.length) {
+                System.out.println("all " + 1 + "s on row " + i);
+            }
 
+            int sumColumn = 0, sumColumn1 = 0;
+            for (int k = 0; k < matrix.length; k++) {
+                if (matrix[k][i] == 0) {
+                    sumColumn++;
+                }
+                if (matrix[k][i] == 1) {
+                    sumColumn1++;
+                }
+            }
+            if (sumColumn == matrix.length) {
+                System.out.println("all " + 0 + "s on column " + i);
+            }
+            if (sumColumn1 == matrix.length) {
+                System.out.println("all " + 1 + "s on column " + i);
+            }
+        }
+            int majDiagonal=0,majDiagonal1=0;
+            for(int l=0;l<matrix.length;l++){
+                if(matrix[l][l]==0){majDiagonal++;}
+                if(matrix[l][l]==1){majDiagonal1++;}
+            }
+            if(majDiagonal==matrix.length){
+                System.out.println("all "+0+"s on major diagonal ");
+            }
+            if(majDiagonal1==matrix.length){
+                System.out.println("all "+1+"s on major diagonal ");
+            }
+            int subDiagonal=0,subDiagonal1=0;;
+                for (int m = matrix.length - 1,i=0; m >= 0; m--,i++) {
+                    if (matrix[i][m] == 0) {
+                        subDiagonal++;
+                    }
+                    if (matrix[i][m] == 1) {
+                        subDiagonal1++;
+                    }
+                }
+                if (subDiagonal == matrix.length) {
+                    System.out.println("all " + 0 + "s on sub diagonal ");
+                }
+                if (subDiagonal1 == matrix.length) {
+                    System.out.println("all " + 1 + "s on sub diagonal ");
+                }
+
+        }
 
 
 
