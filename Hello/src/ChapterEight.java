@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ChapterEight {
@@ -259,7 +260,7 @@ public class ChapterEight {
 
     }
 */  //8.14
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println(" what is the length of matrix");
         int m = sc.nextInt();
@@ -339,7 +340,47 @@ public class ChapterEight {
                 }
 
         }
+*/  //8.17
+/*    public static void main(String[] args) {
+        double [][][] lend={//{banka, borcverilen banka, miktar
+                {{125,100.5},{181,320.5}},
+                {{175,40},{75,85}},
+                {{25,125},{75,75}},
+                {{25,125},{0,0}},
+                {{175,125},{0,0}}
+        };
+        double [][][] borrow={//{banka, borc alınan banka, miktar
+                {{75,125},{175,125}},
+                {{25,100.5},{0,0}},
+                {{125,40},{181,125}},
+                {{175,75},{125,85}},
+                {{25,320.5},{0,0}}
+        };
+        tsunami(lend,borrow);
+    }
+    public static void tsunami(double [][][]arr,double [][][]borrow ){
+        for(int i=0;i<arr.length;i++){
+            double sub=arr[i][0][0]+arr[i][0][1]+arr[i][0][2];
+            System.out.println(sub);
 
-
-
+        }
+    }
+*/
+    //8.18
+    public static void main(String[] args) {
+        int[][] m = {{1, 2}, {3, 4}, {5, 6}, {7, 8}, {9, 10}};
+        shuffle(m);
+    }
+    public static void shuffle(int[][] m) {
+        int [][] arr=new int[m.length][m[0].length];
+        for (int i = 0; i < m.length; i++) {
+            arr[i]=m[(int) (Math.random()*5)];
+        }
+        write(arr);
+    }
+    public static void write(int[][] arr) {
+        for (int[] num:arr) {
+            System.out.println(Arrays.toString(num));
+        }
+    }
 }
